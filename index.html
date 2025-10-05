@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f7f7f7;
+    }
+
+    .pricing-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .card.active {
+      background: #4CAF50;
+      color: white;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="pricing-container">
+    <div class="card">
+      <h3>Basic</h3>
+      <p>$9/mo</p>
+      <p>1 project</p>
+      <p>Email support</p>
+      <button onclick="selectCard(this)">Choose</button>
+    </div>
+
+    <div class="card">
+      <h3>Standard</h3>
+      <p>$19/mo</p>
+      <p>5 projects</p>
+      <p>Priority support</p>
+      <button onclick="selectCard(this)">Choose</button>
+    </div>
+
+    <div class="card">
+      <h3>Premium</h3>
+      <p>$39/mo</p>
+      <p>Unlimited projects</p>
+      <p>24/7 support</p>
+      <button onclick="selectCard(this)">Choose</button>
+    </div>
+  </div>
+
+  <script>
+    function selectCard(button) {
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.remove('active'));
+      button.parentElement.classList.add('active');
+    }
+  </script>
+</body>
+</html>
